@@ -1,0 +1,57 @@
+name: Coverage badges generation & publish
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Setting up pnpm
+        uses: pnpm/action-setup@v2.2.1
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.node-version'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Tests
+        run: pnpm test-ci
+
+      - name: Generating coverage badges
+        uses: jpb06/jest-badges-action@v1.8.7
+
+      - name: Bump package version
+        id: bumping-version
+        uses: jpb06/bump-package@v2.5.0
+        with:
+          major-keywords: BREAKING CHANGE
+          minor-keywords: feat,minor
+          patch-keywords: fix,chore
+          should-default-to-patch: true
+
+      - name: Building package
+        run: pnpm build
+
+      - name: Publish package
+        if: steps.bumping-version.outputs.bump-performed == 'true'
+        run: |
+          cd dist
+          pnpm publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
