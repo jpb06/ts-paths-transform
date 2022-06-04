@@ -13,7 +13,7 @@ import { transformTsPaths } from './transform-ts-paths';
 describe('transformTsPaths function', () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    //jest.spyOn(console, 'info').mockImplementation(() => {});
+    jest.spyOn(console, 'info').mockImplementation(() => {});
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
