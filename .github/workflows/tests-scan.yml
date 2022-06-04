@@ -39,7 +39,7 @@ jobs:
         run: pnpm lint
 
       - name: Tests
-        run: pnpm test:ci
+        run: pnpm test-ci
 
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
