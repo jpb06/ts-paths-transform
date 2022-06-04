@@ -4,6 +4,7 @@
   "main": "index.js",
   "repository": "git@github.com:jpb06/ts-paths-transfom.git",
   "author": "jpb06 <jp.bois.06@outlook.fr>",
+  "packageManager": "pnpm@7.1.8",
   "license": "MIT",
   "scripts": {
     "copy-package": "copyfiles package.json ./dist/",
