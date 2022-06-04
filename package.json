@@ -10,7 +10,7 @@
     "copy-package": "copyfiles package.json ./dist/",
     "copy-readme": "copyfiles README.md ./dist/",
     "build": "del-cli ./dist && tsc --project tsconfig.prod.json",
-    "postbuild": "yarn copy-package && yarn copy-readme",
+    "postbuild": "pnpm copy-package && pnpm copy-readme",
     "test": "jest",
     "test-changes": "jest --watch",
     "test-dev": "jest --watchAll --coverage --no-cache",
