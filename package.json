@@ -1,11 +1,15 @@
 {
-  "name": "ts-paths-transfom",
-  "version": "1.0.0",
+  "name": "ts-paths-transform",
+  "version": "1.0.1",
   "main": "index.js",
-  "repository": "git@github.com:jpb06/ts-paths-transfom.git",
+  "repository": "git@github.com:jpb06/ts-paths-transform.git",
   "author": "jpb06 <jp.bois.06@outlook.fr>",
   "packageManager": "pnpm@7.1.8",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
   "scripts": {
     "copy-package": "copyfiles package.json ./dist/",
     "copy-readme": "copyfiles README.md ./dist/",

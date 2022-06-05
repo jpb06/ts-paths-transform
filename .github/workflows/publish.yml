@@ -3,10 +3,10 @@ name: Coverage badges generation & publish
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
-  install:
+  publish:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -26,6 +26,7 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -52,6 +53,6 @@ jobs:
         if: steps.bumping-version.outputs.bump-performed == 'true'
         run: |
           cd dist
-          pnpm publish --no-git-checks
+          yarn publish --non-interactive
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

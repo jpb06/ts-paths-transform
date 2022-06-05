@@ -4,7 +4,7 @@ import prettyJson from 'prettyjson';
 
 import { TransformFunctionResult } from '../transformers/types/transform-function.type';
 
-const header = chalk.cyanBright.underline.bold('ts-paths-transfom');
+const header = chalk.cyanBright.underline.bold('ts-paths-transform');
 
 const successHeader = `${header} 🚀 ${chalk.whiteBright('-')}`;
 const unknownHeader = `${header} 🤷 ${chalk.whiteBright('-')}`;

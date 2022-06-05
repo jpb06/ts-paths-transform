@@ -47,7 +47,7 @@ describe('transformTsPaths function', () => {
     expect(console.info).toHaveBeenCalledTimes(1);
     expect(console.info).toHaveBeenCalledWith(
       `${chalk.cyanBright.underline.bold(
-        'ts-paths-transfom',
+        'ts-paths-transform',
       )} 🤷 ${chalk.whiteBright('-')} ${chalk.redBright.bold(
         'No paths found',
       )}`,
@@ -61,7 +61,7 @@ describe('transformTsPaths function', () => {
     expect(console.info).toHaveBeenCalledTimes(1);
     expect(console.info).toHaveBeenCalledWith(
       `${chalk.cyanBright.underline.bold(
-        'ts-paths-transfom',
+        'ts-paths-transform',
       )} 🚀 ${chalk.whiteBright('-')} ${chalk.blueBright.bold(
         `6 paths were found and transformed ✨\n${prettyJson.render(
           transformedPathAlias,
@@ -81,7 +81,7 @@ describe('transformTsPaths function', () => {
     expect(console.error).toHaveBeenCalledTimes(1);
     expect(console.error).toHaveBeenCalledWith(
       `${chalk.cyanBright.underline.bold(
-        'ts-paths-transfom',
+        'ts-paths-transform',
       )} ❌ ${chalk.whiteBright(
         '-',
       )} Cannot convert undefined or null to object`,
