@@ -17,9 +17,17 @@
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=jpb06_ts-paths-transform&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=jpb06_ts-paths-transform)
 ![Last commit](https://img.shields.io/github/last-commit/jpb06/ts-paths-transform?logo=git)
 
+A little helper transforming tsconfig paths to make jest config easier.
+
+## ⚡ Install
+
+```bash
+yarn add -D ts-paths-transform
+```
+
 ## ⚡ But why?
 
-Grew tired of adding [`ts-jest`](https://github.com/kulshekhar/ts-jest) just to use the `pathsToModuleNameMapper` function.
+Grew tired of adding [`ts-jest`](https://github.com/kulshekhar/ts-jest) just to use its `pathsToModuleNameMapper` function.
 
 ## ⚡ Scenario
 
@@ -40,7 +48,7 @@ Let's imagine I want to test a Typescript codebase using jest. I'm using paths l
 }
 ```
 
-Now in jest config, I could use the aforementioned `pathsToModuleNameMapper` function or set paths manually in `moduleNameMapper` like so:
+Now in jest config, I could use the aforementioned `pathsToModuleNameMapper` function or set paths manually in `moduleNameMapper`:
 
 👇 jest.config.ts
 
@@ -68,7 +76,7 @@ Let's use the function this library exposes:
 ```typescript
 import { transformTsPaths } from `ts-paths-transform`;
 
-const { compilerOptions } = require('./tsconfig.json');
+import { compilerOptions } from './tsconfig.json';
 
 const options: Config.InitialOptions = {
   // [...]
