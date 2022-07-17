@@ -35,11 +35,11 @@ jobs:
         run: pnpm test-ci
 
       - name: Generating coverage badges
-        uses: jpb06/jest-badges-action@v1.8.7
+        uses: jpb06/jest-badges-action@v1.9.1
 
       - name: Bump package version
         id: bumping-version
-        uses: jpb06/bump-package@v2.5.0
+        uses: jpb06/bump-package@v2.5.3
         with:
           major-keywords: BREAKING CHANGE
           minor-keywords: feat,minor
@@ -51,8 +51,6 @@ jobs:
 
       - name: Publish package
         if: steps.bumping-version.outputs.bump-performed == 'true'
-        run: |
-          cd dist
-          yarn publish --non-interactive
+        run: npm publish ./dist --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
