@@ -11,23 +11,24 @@ const unknownHeader = `${header} 🤷 ${chalk.whiteBright('-')}`;
 const errorHeader = `${header} ❌ ${chalk.whiteBright('-')}`;
 
 export const logResult = (
-  debug: boolean,
+  verbose: boolean,
   paths: TransformFunctionResult,
 ): void => {
-  const pathsCount = Object.entries(paths).length;
+  if (!verbose) {
+    return;
+  }
 
+  const pathsCount = Object.entries(paths).length;
   if (pathsCount === 0) {
     console.info(`${unknownHeader} ${chalk.redBright.bold('No paths found')}`);
   } else {
-    const pathsDebug = debug
-      ? prettyJson.render(paths, {
-          keysColor: 'brightGreen',
-          stringColor: 'grey',
-        })
-      : '';
+    const transformedPaths = prettyJson.render(paths, {
+      keysColor: 'brightGreen',
+      stringColor: 'grey',
+    });
     console.info(
       `${successHeader} ${chalk.blueBright.bold(
-        `${pathsCount} paths were found and transformed ✨\n${pathsDebug}`,
+        `${pathsCount} paths were found and transformed ✨\n${transformedPaths}`,
       )}`,
     );
   }

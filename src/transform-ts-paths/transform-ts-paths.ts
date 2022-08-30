@@ -8,7 +8,9 @@ import {
 
 export const transformTsPaths = (
   mapping: TsPathMapping,
-  { prefix = '', debug = false }: TransformTsPathsOptions = Object.create(null),
+  { prefix = '', verbose = false }: TransformTsPathsOptions = Object.create(
+    null,
+  ),
 ): JestPathMapping => {
   try {
     const paths = Object.entries(mapping)
@@ -19,7 +21,7 @@ export const transformTsPaths = (
       )
       .reduce((prev, curr) => ({ ...prev, ...curr }), {});
 
-    logResult(debug, paths);
+    logResult(verbose, paths);
 
     return paths;
   } catch (err) {

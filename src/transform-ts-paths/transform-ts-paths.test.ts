@@ -18,7 +18,7 @@ describe('transformTsPaths function', () => {
   });
 
   it('should transform paths', () => {
-    const result = transformTsPaths(pathsAlias, { debug: true });
+    const result = transformTsPaths(pathsAlias, { verbose: true });
 
     expect(result).toStrictEqual(transformedPathAlias);
   });
@@ -37,11 +37,21 @@ describe('transformTsPaths function', () => {
     expect(result).toStrictEqual({});
   });
 
+  it('should display nothing when verbose is set to false', () => {
+    const paths = {};
+    const verbose = false;
+
+    transformTsPaths(paths, { verbose });
+
+    expect(console.error).toHaveBeenCalledTimes(0);
+    expect(console.info).toHaveBeenCalledTimes(0);
+  });
+
   it('should display a log when no paths were transformed', () => {
     const paths = {};
-    const debug = true;
+    const verbose = true;
 
-    transformTsPaths(paths, { debug });
+    transformTsPaths(paths, { verbose });
 
     expect(console.error).toHaveBeenCalledTimes(0);
     expect(console.info).toHaveBeenCalledTimes(1);
@@ -55,7 +65,7 @@ describe('transformTsPaths function', () => {
   });
 
   it('should display a log when paths were transformed', () => {
-    transformTsPaths(pathsAlias, { debug: true });
+    transformTsPaths(pathsAlias, { verbose: true });
 
     expect(console.error).toHaveBeenCalledTimes(0);
     expect(console.info).toHaveBeenCalledTimes(1);
@@ -75,7 +85,7 @@ describe('transformTsPaths function', () => {
   });
 
   it('should display an error', () => {
-    transformTsPaths(undefined as never, { debug: true });
+    transformTsPaths(undefined as never, { verbose: true });
 
     expect(console.info).toHaveBeenCalledTimes(0);
     expect(console.error).toHaveBeenCalledTimes(1);
