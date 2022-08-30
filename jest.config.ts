@@ -1,24 +1,24 @@
-import type { Config } from "@jest/types";
+import type { Config } from '@jest/types';
 
 const options: Config.InitialOptions = {
   logHeapUsage: true,
   transform: {
-    "^.+\\.ts$": ["@swc/jest", {}],
+    '^.+\\.ts$': ['@swc/jest', {}],
   },
-  moduleFileExtensions: ["js", "json", "ts"],
+  moduleFileExtensions: ['js', 'json', 'ts'],
   watchPlugins: [
-    "jest-watch-typeahead/filename",
-    "jest-watch-typeahead/testname",
+    'jest-watch-typeahead/filename',
+    'jest-watch-typeahead/testname',
   ],
-  coverageReporters: ["json-summary", "text", "lcov"],
+  coverageReporters: ['json-summary', 'text', 'lcov'],
   collectCoverage: true,
   collectCoverageFrom: [
-    "src/**/*.ts",
-    "!<rootDir>/node_modules/",
-    "!<rootDir>/dist/",
-    "!<rootDir>/src/**/index.ts",
+    'src/**/*.ts',
+    '!<rootDir>/node_modules/',
+    '!<rootDir>/dist/',
+    '!<rootDir>/src/**/index.ts',
   ],
-  modulePathIgnorePatterns: ["<rootDir>/dist"],
+  modulePathIgnorePatterns: ['<rootDir>/dist'],
 };
 
 export default options;
