@@ -103,7 +103,7 @@ const options: Config.InitialOptions = {
 ```typescript
 const paths = transformTsPaths(compilerOptions.paths, {
   prefix: 'blabla',
-  debug: true,
+  verbose: true,
 });
 ```
 
@@ -125,7 +125,7 @@ const paths = transformTsPaths(tsConfigPaths, {
 //  '^@api/(.*)$': '<RootDir>/src/api/$1',
 ```
 
-#### 🧿 `debug` - boolean
+#### 🧿 `verbose` - boolean
 
 Displays transformed output:
 
@@ -135,7 +135,7 @@ const tsConfigPaths = {
   '@api/*': ['src/api/*'],
 };
 const paths = transformTsPaths(tsConfigPaths, {
-  debug: true,
+  verbose: true,
 });
 ```
 

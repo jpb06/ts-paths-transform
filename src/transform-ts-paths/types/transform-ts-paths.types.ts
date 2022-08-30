@@ -6,5 +6,5 @@ export type JestPathMapping = Config.InitialOptions['moduleNameMapper'];
 
 export type TransformTsPathsOptions = {
   prefix?: string;
-  debug?: boolean;
+  verbose?: boolean;
 };
