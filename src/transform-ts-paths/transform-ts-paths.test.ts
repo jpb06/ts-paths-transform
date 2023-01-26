@@ -3,12 +3,12 @@
 import chalk from 'chalk';
 import prettyJson from 'prettyjson';
 
+import { transformTsPaths } from './transform-ts-paths';
 import {
   pathsAlias,
   transformedPathAlias,
   transformedPathAliasWithPrefix,
 } from '../tests/mock-data/paths-alias.mock-data';
-import { transformTsPaths } from './transform-ts-paths';
 
 describe('transformTsPaths function', () => {
   beforeEach(() => {
