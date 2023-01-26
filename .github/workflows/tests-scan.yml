@@ -40,6 +40,9 @@ jobs:
       - name: Linting
         run: pnpm lint
 
+      - name: Types checking
+        run: pnpm type-check
+
       - name: Tests
         run: pnpm test-ci
 
