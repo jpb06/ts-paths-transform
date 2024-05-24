@@ -2,19 +2,21 @@
 /* eslint-disable no-console */
 import chalk from 'chalk';
 import prettyJson from 'prettyjson';
+import { describe, vi, beforeEach, it, expect } from 'vitest';
 
-import { transformTsPaths } from './transform-ts-paths';
 import {
   pathsAlias,
   transformedPathAlias,
   transformedPathAliasWithPrefix,
 } from '../tests/mock-data/paths-alias.mock-data';
 
+import { transformTsPaths } from './transform-ts-paths';
+
 describe('transformTsPaths function', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
-    jest.spyOn(console, 'info').mockImplementation(() => {});
-    jest.spyOn(console, 'error').mockImplementation(() => {});
+    vi.clearAllMocks();
+    vi.spyOn(console, 'info').mockImplementation(() => {});
+    vi.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   it('should transform paths', () => {

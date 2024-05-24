@@ -1,6 +1,4 @@
-export type TransformFunctionResult = {
-  [x: string]: string;
-};
+export type TransformFunctionResult = Record<string, string>;
 
 export type TransformFunction = (
   prefix: string,
