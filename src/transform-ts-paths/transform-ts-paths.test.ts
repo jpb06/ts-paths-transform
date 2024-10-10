@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
-/* eslint-disable no-console */
-import chalk from 'chalk';
+import colors from 'picocolors';
 import prettyJson from 'prettyjson';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -60,10 +58,10 @@ describe('transformTsPaths function', () => {
     expect(console.error).toHaveBeenCalledTimes(0);
     expect(console.info).toHaveBeenCalledTimes(1);
     expect(console.info).toHaveBeenCalledWith(
-      `${chalk.cyanBright.underline.bold(
-        'ts-paths-transform',
-      )} 🤷 ${chalk.whiteBright('-')} ${chalk.redBright.bold(
-        'No paths found',
+      `${colors.cyanBright(
+        colors.underline(colors.bold('ts-paths-transform')),
+      )} 🤷 ${colors.whiteBright('-')} ${colors.redBright(
+        colors.bold('No paths found'),
       )}`,
     );
   });
@@ -74,16 +72,18 @@ describe('transformTsPaths function', () => {
     expect(console.error).toHaveBeenCalledTimes(0);
     expect(console.info).toHaveBeenCalledTimes(1);
     expect(console.info).toHaveBeenCalledWith(
-      `${chalk.cyanBright.underline.bold(
-        'ts-paths-transform',
-      )} 🚀 ${chalk.whiteBright('-')} ${chalk.blueBright.bold(
-        `6 paths were found and transformed ✨\n${prettyJson.render(
-          transformedPathAlias,
-          {
-            keysColor: 'brightGreen',
-            stringColor: 'grey',
-          },
-        )}`,
+      `${colors.cyanBright(
+        colors.underline(colors.bold('ts-paths-transform')),
+      )} 🚀 ${colors.whiteBright('-')} ${colors.blueBright(
+        colors.bold(
+          `6 paths were found and transformed ✨\n${prettyJson.render(
+            transformedPathAlias,
+            {
+              keysColor: 'brightGreen',
+              stringColor: 'grey',
+            },
+          )}`,
+        ),
       )}`,
     );
   });
@@ -94,9 +94,9 @@ describe('transformTsPaths function', () => {
     expect(console.info).toHaveBeenCalledTimes(0);
     expect(console.error).toHaveBeenCalledTimes(1);
     expect(console.error).toHaveBeenCalledWith(
-      `${chalk.cyanBright.underline.bold(
-        'ts-paths-transform',
-      )} ❌ ${chalk.whiteBright(
+      `${colors.cyanBright(
+        colors.underline(colors.bold('ts-paths-transform')),
+      )} ❌ ${colors.whiteBright(
         '-',
       )} Cannot convert undefined or null to object`,
     );
