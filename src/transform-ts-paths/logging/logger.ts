@@ -1,14 +1,15 @@
-/* eslint-disable no-console */
-import chalk from 'chalk';
+import colors from 'picocolors';
 import prettyJson from 'prettyjson';
 
 import { TransformFunctionResult } from '../transformers/types/transform-function.type';
 
-const header = chalk.cyanBright.underline.bold('ts-paths-transform');
+const header = colors.cyanBright(
+  colors.underline(colors.bold('ts-paths-transform')),
+);
 
-const successHeader = `${header} 🚀 ${chalk.whiteBright('-')}`;
-const unknownHeader = `${header} 🤷 ${chalk.whiteBright('-')}`;
-const errorHeader = `${header} ❌ ${chalk.whiteBright('-')}`;
+const successHeader = `${header} 🚀 ${colors.whiteBright('-')}`;
+const unknownHeader = `${header} 🤷 ${colors.whiteBright('-')}`;
+const errorHeader = `${header} ❌ ${colors.whiteBright('-')}`;
 
 export const logResult = (
   verbose: boolean,
@@ -20,15 +21,19 @@ export const logResult = (
 
   const pathsCount = Object.entries(paths).length;
   if (pathsCount === 0) {
-    console.info(`${unknownHeader} ${chalk.redBright.bold('No paths found')}`);
+    console.info(
+      `${unknownHeader} ${colors.redBright(colors.bold('No paths found'))}`,
+    );
   } else {
     const transformedPaths = prettyJson.render(paths, {
       keysColor: 'brightGreen',
       stringColor: 'grey',
     });
     console.info(
-      `${successHeader} ${chalk.blueBright.bold(
-        `${pathsCount} paths were found and transformed ✨\n${transformedPaths}`,
+      `${successHeader} ${colors.blueBright(
+        colors.bold(
+          `${pathsCount} paths were found and transformed ✨\n${transformedPaths}`,
+        ),
       )}`,
     );
   }
