@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 import chalk from 'chalk';
 import prettyJson from 'prettyjson';
-import { describe, vi, beforeEach, it, expect } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import {
   pathsAlias,
@@ -15,7 +15,9 @@ import { transformTsPaths } from './transform-ts-paths';
 describe('transformTsPaths function', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    // biome-ignore lint/suspicious/noEmptyBlockStatements: <explanation>
     vi.spyOn(console, 'info').mockImplementation(() => {});
+    // biome-ignore lint/suspicious/noEmptyBlockStatements: <explanation>
     vi.spyOn(console, 'error').mockImplementation(() => {});
   });
 
