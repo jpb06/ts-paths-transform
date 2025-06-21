@@ -25,22 +25,22 @@
     "sync-icons": "bun generateReadmeIcons -h 50"
   },
   "dependencies": {
-    "picocolors": "^1.1.0",
+    "picocolors": "^1.1.1",
     "prettyjson": "^1.2.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.3",
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
-    "@jest/types": "^29.6.3",
-    "@types/node": "^22.7.5",
+    "@biomejs/biome": "^2.0.4",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@jest/types": "^30.0.1",
+    "@types/node": "^24.0.3",
     "@types/prettyjson": "^0.0.33",
-    "@vitest/coverage-v8": "^2.1.2",
+    "@vitest/coverage-v8": "^3.2.4",
     "copyfiles": "^2.4.1",
     "del-cli": "^6.0.0",
-    "readme-package-icons": "^1.1.15",
+    "readme-package-icons": "^1.2.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3",
-    "vitest": "^2.1.2"
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
   }
 }

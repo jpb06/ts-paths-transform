@@ -17,14 +17,14 @@ export const transformedPathAlias = {
 };
 
 export const transformedPathAliasWithPrefix = {
-  '^@api$': '<RootDir>/../../libs/front/api/src/main-backend/calls/index.ts',
-  '^@api/(.*)$': '<RootDir>/../../libs/front/api/src/main-backend/calls/$1',
+  '^@api$': '<rootDir>/../../libs/front/api/src/main-backend/calls/index.ts',
+  '^@api/(.*)$': '<rootDir>/../../libs/front/api/src/main-backend/calls/$1',
   '^@components/molecules$':
-    '<RootDir>/../../libs/front/components/src/molecules/index.ts',
+    '<rootDir>/../../libs/front/components/src/molecules/index.ts',
   '^@components/molecules/(.*)$':
-    '<RootDir>/../../libs/front/components/src/molecules/$1',
+    '<rootDir>/../../libs/front/components/src/molecules/$1',
   '^@components/organisms$':
-    '<RootDir>/../../libs/front/components/src/organisms/index.ts',
+    '<rootDir>/../../libs/front/components/src/organisms/index.ts',
   '^@components/organisms/(.*)$':
-    '<RootDir>/../../libs/front/components/src/organisms/$1',
+    '<rootDir>/../../libs/front/components/src/organisms/$1',
 };
