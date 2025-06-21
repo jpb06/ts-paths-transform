@@ -13,9 +13,9 @@ import { transformTsPaths } from './transform-ts-paths';
 describe('transformTsPaths function', () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    // biome-ignore lint/suspicious/noEmptyBlockStatements: <explanation>
+    // biome-ignore lint/suspicious/noEmptyBlockStatements: /
     vi.spyOn(console, 'info').mockImplementation(() => {});
-    // biome-ignore lint/suspicious/noEmptyBlockStatements: <explanation>
+    // biome-ignore lint/suspicious/noEmptyBlockStatements: /
     vi.spyOn(console, 'error').mockImplementation(() => {});
   });
 
@@ -27,7 +27,7 @@ describe('transformTsPaths function', () => {
 
   it('should transform paths with a prefix', () => {
     const result = transformTsPaths(pathsAlias, {
-      prefix: '<RootDir>/../../',
+      prefix: '<rootDir>/../../',
     });
 
     expect(result).toStrictEqual(transformedPathAliasWithPrefix);

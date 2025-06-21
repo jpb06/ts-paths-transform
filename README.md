@@ -117,12 +117,12 @@ const tsConfigPaths = {
   '@api/*': ['src/api/*'],
 };
 const paths = transformTsPaths(tsConfigPaths, {
-  prefix: '<RootDir>/',
+  prefix: '<rootDir>/',
 });
 
 // Paths =
-//  '^@cool$': '<RootDir>/src/cool/index.ts',
-//  '^@api/(.*)$': '<RootDir>/src/api/$1',
+//  '^@cool$': '<rootDir>/src/cool/index.ts',
+//  '^@api/(.*)$': '<rootDir>/src/api/$1',
 ```
 
 #### 🧿 `verbose` - boolean
