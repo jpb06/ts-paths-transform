@@ -29,16 +29,16 @@
     "prettyjson": "^1.2.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.0.4",
+    "@biomejs/biome": "^2.0.6",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@jest/types": "^30.0.1",
-    "@types/node": "^24.0.3",
+    "@types/node": "^24.0.10",
     "@types/prettyjson": "^0.0.33",
     "@vitest/coverage-v8": "^3.2.4",
     "copyfiles": "^2.4.1",
     "del-cli": "^6.0.0",
-    "readme-package-icons": "^1.2.1",
+    "readme-package-icons": "^1.2.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4"
