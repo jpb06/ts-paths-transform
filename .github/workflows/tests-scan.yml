@@ -23,7 +23,7 @@ jobs:
         uses: styfle/cancel-workflow-action@0.12.1
 
       - name: ⬇️ Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 📦 Setup bun
         uses: oven-sh/setup-bun@v2
@@ -52,7 +52,7 @@ jobs:
         uses: styfle/cancel-workflow-action@0.12.1
 
       - name: ⬇️ Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 📦 Setup bun
         uses: oven-sh/setup-bun@v2
@@ -78,7 +78,7 @@ jobs:
         uses: styfle/cancel-workflow-action@0.12.1
 
       - name: ⬇️ Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 📦 Setup bun
         uses: oven-sh/setup-bun@v2
@@ -111,7 +111,7 @@ jobs:
         uses: styfle/cancel-workflow-action@0.12.1
 
       - name: ⬇️ Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 👀 Get coverage artifact
         uses: actions/download-artifact@v4
