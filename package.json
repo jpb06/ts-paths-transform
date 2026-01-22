@@ -1,47 +1,47 @@
 {
-	"name": "ts-paths-transform",
-	"version": "2.0.22",
-	"main": "index.js",
-	"repository": {
-		"type": "git",
-		"url": "git+ssh://git@github.com/jpb06/ts-paths-transform.git"
-	},
-	"author": "jpb06 <jp.bois.06@outlook.fr>",
-	"license": "MIT",
-	"scripts": {
-		"update-deps": "bunx npm-check-updates --root --format group -i",
-		"copy-package": "copyfiles package.json ./dist/",
-		"copy-readme": "copyfiles README.md ./dist/",
-		"build": "del-cli ./dist && tsc --project tsconfig.prod.json",
-		"postbuild": "bun copy-package && bun copy-readme",
-		"check": "biome check --write .",
-		"format": "biome format --write .",
-		"format-ci": "biome format .",
-		"lint": "biome lint .",
-		"test": "vitest",
-		"test-ci": "vitest --coverage --run",
-		"test-dev": "vitest --coverage",
-		"test-coverage": "vitest run --coverage",
-		"type-check": "tsc --noEmit",
-		"sync-icons": "bun generateReadmeIcons -h 50"
-	},
-	"dependencies": {
-		"picocolors": "1.1.1",
-		"prettyjson": "1.2.5"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "2.3.11",
-		"@commitlint/cli": "20.3.1",
-		"@commitlint/config-conventional": "20.3.1",
-		"@jest/types": "30.2.0",
-		"@types/node": "25.0.10",
-		"@types/prettyjson": "0.0.33",
-		"@vitest/coverage-v8": "4.0.18",
-		"copyfiles": "2.4.1",
-		"del-cli": "7.0.0",
-		"readme-package-icons": "1.2.2",
-		"ts-node": "10.9.2",
-		"typescript": "5.9.3",
-		"vitest": "4.0.18"
-	}
+  "name": "ts-paths-transform",
+  "version": "2.0.22",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jpb06/ts-paths-transform"
+  },
+  "author": "jpb06 <jp.bois.06@outlook.fr>",
+  "license": "MIT",
+  "scripts": {
+    "update-deps": "bunx npm-check-updates --root --format group -i",
+    "copy-package": "copyfiles package.json ./dist/",
+    "copy-readme": "copyfiles README.md ./dist/",
+    "build": "del-cli ./dist && tsc --project tsconfig.prod.json",
+    "postbuild": "bun copy-package && bun copy-readme",
+    "check": "biome check --write .",
+    "format": "biome format --write .",
+    "format-ci": "biome format .",
+    "lint": "biome lint .",
+    "test": "vitest",
+    "test-ci": "vitest --coverage --run",
+    "test-dev": "vitest --coverage",
+    "test-coverage": "vitest run --coverage",
+    "type-check": "tsc --noEmit",
+    "sync-icons": "bun generateReadmeIcons -h 50"
+  },
+  "dependencies": {
+    "picocolors": "1.1.1",
+    "prettyjson": "1.2.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.11",
+    "@commitlint/cli": "20.3.1",
+    "@commitlint/config-conventional": "20.3.1",
+    "@jest/types": "30.2.0",
+    "@types/node": "25.0.10",
+    "@types/prettyjson": "0.0.33",
+    "@vitest/coverage-v8": "4.0.18",
+    "copyfiles": "2.4.1",
+    "del-cli": "7.0.0",
+    "readme-package-icons": "1.2.2",
+    "ts-node": "10.9.2",
+    "typescript": "5.9.3",
+    "vitest": "4.0.18"
+  }
 }
