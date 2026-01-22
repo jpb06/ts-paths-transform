@@ -12,6 +12,8 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
+  contents: write
+  pull-requests: write
   id-token: write
 
 jobs:
