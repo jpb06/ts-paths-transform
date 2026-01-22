@@ -33,7 +33,7 @@
 		"@biomejs/biome": "2.3.2",
 		"@commitlint/cli": "20.3.1",
 		"@commitlint/config-conventional": "20.3.1",
-		"@jest/types": "30.0.5",
+		"@jest/types": "30.2.0",
 		"@types/node": "24.3.1",
 		"@types/prettyjson": "0.0.33",
 		"@vitest/coverage-v8": "3.2.4",
