@@ -11,6 +11,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  id-token: write
+
 jobs:
   publish:
     name: 🛩️ Publish
@@ -50,6 +53,7 @@ jobs:
 
       - name: 🚀 Publish package
         if: steps.bumping-version.outputs.bump-performed == 'true'
-        run: npm publish ./dist --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: 'true'
+          NODE_AUTH_TOKEN: ''  # Clear placeholder set by setup-node to enable OIDC
+        run: npm publish ./dist --access public --provenance
